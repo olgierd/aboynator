@@ -13,7 +13,7 @@ public class AboyneGame {
 	
 	board = new Board();
 	board.generateFieldsLocations(new Point(40, 40), 40);
-	board.generateNeighboors();
+	board.generateNeighboors();//LOL
 	
 	playerLeft = new Player(board);
 	playerRight = new Player(board);
