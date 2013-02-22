@@ -58,7 +58,7 @@ class GUI extends JPanel implements MouseListener, MouseMotionListener{
 	    g.drawString(Integer.toString(f.fieldID), f.location.x-5, f.location.y+5);
 	}
 	
-	g.setColor(Color.white);
+	g.setColor(Color.red);
 	
 	for(Stone st : ag.playerLeft.stones) {
 	    Point p = st.field.location; 
@@ -162,12 +162,12 @@ class GUI extends JPanel implements MouseListener, MouseMotionListener{
 		}
 		
 		
-		
-		
 		else if(closestToCursor.stone != null && selectedStone != closestToCursor.stone) {
 		    if(!closestToCursor.stone.isLocked()) {
-			selectedStone = closestToCursor.stone;
-			generateAvailableMoves(closestToCursor.stone);
+			if(closestToCursor.stone.owner == ag.playerLeft) {
+			    selectedStone = closestToCursor.stone;
+			    generateAvailableMoves(closestToCursor.stone);
+			}
 		    }
 		}
 		else {
