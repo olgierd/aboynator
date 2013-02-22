@@ -28,7 +28,7 @@ class GUI extends JPanel implements MouseListener, MouseMotionListener{
 	
 	Polygon p = new Polygon();
 	p.npoints = 7;
-
+ 
 	int x[] = new int[7];
 	int y[] = new int[7];
 	
@@ -66,7 +66,7 @@ class GUI extends JPanel implements MouseListener, MouseMotionListener{
 	    if(st.isLocked()) {
 		g.setColor(Color.black);
 		g.drawString("X", st.field.location.x-5, st.field.location.y+5);
-		g.setColor(Color.white);
+		g.setColor(Color.red);
 	    }
 	    
 	}
@@ -164,10 +164,10 @@ class GUI extends JPanel implements MouseListener, MouseMotionListener{
 		
 		else if(closestToCursor.stone != null && selectedStone != closestToCursor.stone) {
 		    if(!closestToCursor.stone.isLocked()) {
-			if(closestToCursor.stone.owner == ag.playerLeft) {
+//			if(closestToCursor.stone.owner == ag.playerLeft) {
 			    selectedStone = closestToCursor.stone;
 			    generateAvailableMoves(closestToCursor.stone);
-			}
+//			}
 		    }
 		}
 		else {
@@ -268,8 +268,7 @@ public class MainWindow {
 	    public void windowOpened(WindowEvent e) {}
 	});
 	
-	
-	
+
 	
     }
     
