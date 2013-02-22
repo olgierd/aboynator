@@ -9,6 +9,8 @@ public class AboyneGame {
     public Player playerLeft, playerRight;
     public Board board;
     
+   //// asdsa
+    
     public AboyneGame() {
 	
 	board = new Board();
