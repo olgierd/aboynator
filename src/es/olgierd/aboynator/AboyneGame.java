@@ -9,6 +9,8 @@ public class AboyneGame {
     public Player playerLeft, playerRight;
     public Board board;
     
+    public Strategy ai;
+    
     public AboyneGame() {
 	
 	board = new Board();
@@ -20,6 +22,7 @@ public class AboyneGame {
 	playerLeft.initLeftPlayer();
 	playerRight.initRightPlayer();
 
+	ai = new IdioticStrategy(this, playerRight);
     }
     
     public void move(Stone s, Field f) {
@@ -57,7 +60,7 @@ public class AboyneGame {
 	
 	if(s.owner == playerLeft) {
 	    
-	    // jezeli ruszyl sie lewy gracz, to tutaj mozemy wyslac do AI zadanie wykonania ruchu
+	    ai.makeMove();
 	    
 	}
 	
